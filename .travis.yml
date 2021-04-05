@@ -15,9 +15,9 @@ before_script:
 
 script:
   - docker --version # print the version for logging
-  - docker build -t udacity-cd-simple-express .
-  - docker tag udacity-cd-simple-express fgil666/udacity-cd-simple-express:latest
+  - docker build -t udacity-cd-udagram-user .
+  - docker tag udacity-cd-udagram-user fgil666/udacity-cd-udagram-user:latest
 
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker push fgil666/udacity-cd-simple-express
+  - docker push fgil666/udacity-cd-udagram-user
